@@ -31,7 +31,7 @@ services.service('loginService',function($mdDialog){
 
 services.factory('$httpReqs', ['$http', function($http) {
 
-   var urlBase = 'https://kanika-161615.appspot.com';
+   var urlBase = 'https://kanikapp.herokuapp.com';
    var data = {};
 
    data.AllBookings = function () {
