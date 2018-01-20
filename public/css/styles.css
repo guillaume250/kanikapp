@@ -5,3 +5,7 @@ height: 100px;
 background-size: cover;
 display: block;
 }
+
+.md-blue{
+	background-color: rgb(25,25,81);
+}

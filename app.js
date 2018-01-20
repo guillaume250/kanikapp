@@ -26,6 +26,39 @@ app.get('/', function(req,res){
     res.render('index');
 });
 
+
+app.put('/book/:_id', function(req,res){
+  console.log("Updating booking")
+  Book.findOneAndUpdate({
+    _id: req.params._id
+  }, {$set:{Status: req.body.Status}},
+    {upsert: true},
+    function(err,Locations){
+      if(err){
+        console.log('error occured ' + error.message);
+      } else {
+        console.log("Update!!!>>" + Book);
+        res.send(Book);
+      }
+
+  })
+
+})
+
+app.delete('/book/:_id', function(req, res){
+  console.log("deleting booking")
+  Book.findOneAndRemove({
+    _id: req.params._id
+  }, function(err,Book){
+    if(err){
+      res.send('error deleting');
+    } else {
+      console.log(Book);
+      res.send(Book);
+    }
+  })
+});
+
 app.get('/books', function(req, res) {
   console.log('getting all books');
   Book.find({})
@@ -70,7 +103,7 @@ app.post('/book', function(req,res){
 if (module === require.main) {
   // [START server]
   // Start the server
-  const server = app.listen(process.env.PORT || 2233, () => {
+  const server = app.listen(process.env.PORT || 5000, () => {
     const port = server.address().port;
     console.log(`App listening on port ${port}`);
   });

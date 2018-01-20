@@ -8,6 +8,7 @@ var BookSchema = new Schema ({
     Service: String,
     BookDate: Date,
     Status: String,
+    Address: String
 
 });
 
