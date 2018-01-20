@@ -18,17 +18,14 @@ function getCustomers() {
 
 // >>>>>>>>>>>>>>>>>>>> Click on Request <<<<<<<<<<<<<<<<<<<<< \\
   $scope.ViewRequest = function(request){
-    console.log(request);
       $mdDialog.show({
       templateUrl: 'assests/templates/dialogs/request-preview.html',
 
       controller: function($scope){
-
       $scope.cancel = function(){
       $mdDialog.cancel();
 
       };
-
       
       $scope.request = request;
       console.log($scope.request);
