@@ -1,9 +1,9 @@
-var startCtrl = angular.module("dashboardCtrl", ['services']);
+var startCtrl = angular.module("reportsCtrl", ['services']);
 
 
 
 
-startCtrl.controller('dashboardCtrl',function($scope,$stateParams,$state,$mdDialog,loginService,$httpReqs, $mdSidenav){
+startCtrl.controller('reportsCtrl',function($scope,$stateParams,$state,$mdDialog,loginService,$httpReqs, $mdSidenav){
 
 
 

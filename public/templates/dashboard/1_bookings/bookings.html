@@ -1,0 +1,133 @@
+
+    <md-toolbar layout="row" class="md-primary md-hue-4 " md-whiteframe="4">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" ng-click="toggleLeft()" aria-label="Settings" hide-gt-md>
+         <md-icon><i class="material-icons">menu</i></md-icon>
+       </md-button>
+        <h2 flex md-truncate>All booking requests</h2>
+        <div layout="column" layout-align="start end">
+          <h1><b layout-padding>{{user.FullNames}}</b></h1>
+        </div>        
+        <md-menu md-menu-origin md-menu-origin>
+          <md-button ng-mouseenter="$mdMenu.open()" class="md-icon-button" aria-label="More">
+            <md-icon><i class="material-icons">person</i></md-icon>
+          </md-button>
+          <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+            <md-menu-item><md-button ng-click="LogOut()">Log Out</md-button></md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+    </md-toolbar>
+
+<md-content flex layout="column" class="md-primary" layout-padding>
+<div id="start" layout="column" layout-fill>
+
+<div layout-margin> </div>
+
+<div class="md-padding" layout="column" layout-fill layout-align="center center">
+  <md-tabs class="md-primary tabs-responsive" md-dynamic-height="false" flex  md-whiteframe="4">
+
+        <md-tab id="All" layout-fill>
+          <md-tab-label>All Reservations</md-tab-label md-whiteframe="6">
+          <md-tab-body flex layout-fill>
+    <md-input-container md-no-float class="md-block" style="width: 90%; padding-left: 5%;">
+      <input ng-model="searchString" type="text" placeholder="Search">
+    </md-input-container>
+
+        <md-list flex layout-fill>
+          
+            <md-list-item class="md-3-line NewReqsStyle" ng-repeat="item in items |filter:searchString | filter: { Status: 'new'} | orderBy: '-request_date'" ng-click="ViewRequest(item)">
+              <img ng-src="assests/images/ic_perm_contact_calendar_black_24px.svg" class="md-avatar" alt="{{item.who}}" />
+              <div class="md-list-item-text" layout="column">
+                <h3><b>Booked Service:</b> {{ item.Service }}</h3>
+                <h4> <b>Customer's Names: </b>  {{ item.Names }}</h4>
+                <p> <b>Booked date: </b> {{ item.BookDate  | date : medium : timezone}}}</p>
+              </div>
+            </md-list-item>
+
+             <md-list-item class="md-3-line ConfirmedReqsStyle" ng-repeat="item in items |filter:searchString | filter: { Status: 'confirmed'} | orderBy: '-request_date'" ng-click="ViewRequest(item)">
+              <img ng-src="assests/images/ic_perm_contact_calendar_black_24px.svg" class="md-avatar" alt="{{item.who}}" />
+              <div class="md-list-item-text" layout="column">
+                <h3><b>Booked Service:</b> {{ item.Service }}</h3>
+                <h4> <b>Customer's Names: </b>  {{ item.Names }}</h4>
+                <p> <b>Booked date: </b>{{ item.BookDate | date : medium : timezone}}</p>
+              </div>
+            </md-list-item>
+
+            <md-list-item class="md-3-line CanceledReqsStyle" ng-repeat="item in items |filter:searchString | filter: { Status: 'canceled'} | orderBy: '-request_date'" ng-click="ViewRequest(item)">
+              <img ng-src="assests/images/ic_perm_contact_calendar_black_24px.svg" class="md-avatar" alt="{{item.who}}" />
+              <div class="md-list-item-text" layout="column">
+                <h3><b>Booked Service:</b> {{ item.Service }}</h3>
+                <h4> <b>Customer's Names: </b>  {{ item.Names }}</h4>
+                <p> <b>Booked date: </b> {{ item.BookDate | date : medium : timezone}}</p>
+              </div>
+            </md-list-item>
+      </md-list>
+          </md-tab-body>
+        </md-tab>
+
+        <md-tab id="New" layout-fill>
+          <md-tab-label>New Reservations</md-tab-label>
+          <md-tab-body>
+       <md-input-container md-no-float class="md-block" style="width: 90%; padding-left: 5%;">
+      <input ng-model="searchString" type="text" placeholder="Search">
+    </md-input-container>
+
+            <md-list flex>
+            <md-list-item class="md-3-line NewReqsStyle" ng-repeat="item in items |filter:searchString | filter: { Status: 'new'} | orderBy: '-request_date'" ng-click="ViewRequest(item)">
+              <img ng-src="assests/images/ic_perm_contact_calendar_black_24px.svg" class="md-avatar" alt="{{item.who}}" />
+              <div class="md-list-item-text" layout="column">
+                <h3><b>Booked Service:</b> {{ item.Service }}</h3>
+                <h4> <b>Customer's Names: </b>  {{ item.Names }}</h4>
+                <p> <b>Booked date: </b> {{ item.BookDate  | date : medium : timezone}}}</p>
+              </div>
+            </md-list-item>
+
+          </md-list>
+
+          </md-tab-body>
+        </md-tab>
+
+        <md-tab id="Comfirmed" layout-fill>
+          <md-tab-label>Confirmed Reservations</md-tab-label>
+          <md-tab-body>
+      <md-input-container md-no-float class="md-block" style="width: 90%; padding-left: 5%;">
+      <input ng-model="searchString" type="text" placeholder="Search">
+    </md-input-container>
+            <md-list flex>
+
+             <md-list-item class="md-3-line ConfirmedReqsStyle" ng-repeat="item in items |filter:searchString | filter: { Status: 'confirmed'} | orderBy: '-request_date'" ng-click="ViewRequest(item)">
+              <img ng-src="assests/images/ic_perm_contact_calendar_black_24px.svg" class="md-avatar" alt="{{item.who}}" />
+              <div class="md-list-item-text" layout="column">
+                <h3><b>Booked Service:</b> {{ item.Service }}</h3>
+                <h4> <b>Customer's Names: </b>  {{ item.Names }}</h4>
+                <p> <b>Booked date: </b>{{ item.BookDate | date : medium : timezone}}</p>
+              </div>
+            </md-list-item>
+
+          </md-list>
+          </md-tab-body>
+        </md-tab>
+
+        <md-tab id="Canceled">
+          <md-tab-label>Canceled Reservations</md-tab-label>
+          <md-tab-body>
+          <md-input-container md-no-float class="md-block" style="width: 90%; padding-left: 5%;">
+      <input ng-model="searchString" type="text" placeholder="Search">
+    </md-input-container>
+            <md-list flex>
+            <md-list-item class="md-3-line CanceledReqsStyle" ng-repeat="item in items |filter:searchString | filter: { Status: 'canceled'} | orderBy: '-request_date'" ng-click="ViewRequest(item)">
+              <img ng-src="assests/images/ic_perm_contact_calendar_black_24px.svg" class="md-avatar" alt="{{item.who}}" />
+              <div class="md-list-item-text" layout="column">
+                <h3><b>Booked Service:</b> {{ item.Service }}</h3>
+                <h4> <b>Customer's Names: </b>  {{ item.Names }}</h4>
+                <p> <b>Booked date: </b> {{ item.BookDate | date : medium : timezone}}</p>
+              </div>
+            </md-list-item>
+
+          </md-list>
+          </md-tab-body>
+        </md-tab>
+      </md-tabs> <br> <br> <br> <br>
+</div>
+</md-content>

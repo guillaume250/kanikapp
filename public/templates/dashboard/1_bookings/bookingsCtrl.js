@@ -1,9 +1,9 @@
-var startCtrl = angular.module("dashboardCtrl", ['services']);
+var startCtrl = angular.module("bookingsCtrl", ['services']);
 
 
 
 
-startCtrl.controller('dashboardCtrl',function($scope,$stateParams,$state,$mdDialog,loginService,$httpReqs, $mdSidenav){
+startCtrl.controller('bookingsCtrl',function($scope,$stateParams,$state,$mdDialog,loginService,$httpReqs, $mdSidenav){
 
 
 
@@ -94,9 +94,7 @@ function getCustomers() {
           }
         };
 
-$scope.LogOut = function(){
-  $state.go('login')
-}
+
 
 
 

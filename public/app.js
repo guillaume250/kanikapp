@@ -1,4 +1,4 @@
-var myApp = angular.module('InsuranceApp',['ui.router','ngAnimate','ngMaterial','dashboardCtrl','loginCtrl']);
+var myApp = angular.module('InsuranceApp',['ui.router','ngAnimate','ngMaterial','dashboardCtrl','loginCtrl','bookingsCtrl','reportsCtrl','usersCtrl']);
 
 myApp.config(function($stateProvider, $urlRouterProvider) {
 
@@ -15,8 +15,26 @@ $urlRouterProvider.otherwise('/login');
 
     .state('dashboard', {
       url: '/dashboard',
-      templateUrl: '/assests/templates/dashboard/dashboard.html',
+      templateUrl: '/assests/templates/dashboard/0_dashboard.html',
       controller: 'dashboardCtrl'
+    })
+
+    .state('dashboard.bookings', {
+      url: '/bookings',
+      templateUrl: '/assests/templates/dashboard/1_bookings/bookings.html',
+      controller: 'bookingsCtrl'
+    })
+
+    .state('dashboard.reports', {
+      url: '/reports',
+      templateUrl: '/assests/templates/dashboard/2_reports/reports.html',
+      controller: 'reportsCtrl'
+    })
+
+    .state('dashboard.users', {
+      url: '/users',
+      templateUrl: '/assests/templates/dashboard/3_users/users.html',
+      controller: 'usersCtrl'
     })
 
     .state('instruct', {

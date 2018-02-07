@@ -1,0 +1,25 @@
+
+  <div layout="row" layout-fill ng-class="{'NewReqsStyle': request.Status ==='new', 'ConfirmedReqsStyle': request.Status ==='confirmed', 'CanceledReqsStyle': request.Status ==='canceled'}">
+          <div style="padding: 50px;" class="md-list-item-text" layout="column">
+          	<div ng-show="request.Status ==='new'"  class=" " style="margin-left: 25%; color: royalblue;"> <h4>New Booking Request</h4></div>
+            <div ng-show="request.Status ==='confirmed'"  class=" " style="margin-left: 25%; color: royalblue;"> <h4>Confirmed Booking Request</h4></div>
+            <div ng-show="request.Status ==='canceled'"  class=" " style="margin-left: 10%; color: royalblue;"> <h4>Canceled Booking Request</h4></div>
+
+          	<div>
+            <h3><b>Booked Service:</b> {{ request.Service }}</h3>
+            <h4><b>Customer's Names: </b>  {{ request.Names }}</h4>
+            <p><b>Customer's Address: </b> {{ request.Address }}</p>
+            <p><b>Customer's Phone Number: </b> {{ request.Phone }}</p>
+            <p><b>Car infos: </b> {{ request.CarInfos }}</p>
+            <p><b>Booked date: </b> {{ request.BookDate | limitTo : 10}}</p>
+          	</div>
+
+    <div style="padding-top: 100px;" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+    <hr>
+      <md-button ng-show="request.Status !=='confirmed'" ng-hide="request.Status ==='canceled'" class="md-raised md-primary" ng-click="Confirmed()">Confirm</md-button>
+      <md-button ng-hide="request.Status ==='canceled'" class="md-raised md-warn" ng-click="Canceled()">Cancel</md-button>
+      <md-button ng-disabled="false" class="md-raised" ng-click="Delete()">Delete Booking</md-button>
+    </div>     
+
+          </div>
+  </div>

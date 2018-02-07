@@ -14,7 +14,7 @@ $scope.login = {};
 
    $scope.Login = function(){
    	if ($scope.login.UserName === "Fabrice" && $scope.login.Password === "Fabrice") {
-            $state.go('dashboard');
+            $state.go('dashboard.bookings');
 
    	} else {
 

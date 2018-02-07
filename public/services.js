@@ -20,7 +20,6 @@ services.service('loginService',function($mdDialog){
 
     },
         templateUrl: '/assests/templates/login/login.html',
-
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -31,12 +30,22 @@ services.service('loginService',function($mdDialog){
 
 services.factory('$httpReqs', ['$http', function($http) {
 
-   var urlBase = 'https://kanikapp.herokuapp.com';
+   var urlBase = 'http://localhost:5000';
+   //var urlBase = 'https://kanikapp.herokuapp.com';
    var data = {};
 
    data.AllBookings = function () {
        return $http.get(urlBase + '/books');
    };
+
+    data.UpdateBooking = function (booking) {
+        return $http.put(urlBase + '/book', booking);
+    };
+
+    data.DeleteBooking = function (booking) {
+        return $http.delete(urlBase + '/book', booking);
+    };
+
       return data;
 
       }]);
