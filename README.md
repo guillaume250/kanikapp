@@ -1,7 +1,6 @@
-# 1 - Hello world
+# 1 - Kanikapp
 
-This folder contains the sample code for the [Hello world][step-1]
-tutorial. Please refer to the tutorial for instructions on configuring, running,
-and deploying this sample.
+This folder contains the sample code for the [Kanika][step-1]
+trial. Please refer to the temporary hosted version
 
-[step-1]: https://cloud.google.com/nodejs/getting-started/hello-world
+[step-1]: https://kanikapp.herokuapp.com/
