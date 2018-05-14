@@ -30,8 +30,8 @@ services.service('loginService',function($mdDialog){
 
 services.factory('$httpReqs', ['$http', function($http) {
 
-   //var urlBase = 'http://localhost:5000';
-   var urlBase = 'https://kanikapp.herokuapp.com';
+   var urlBase = 'http://localhost:5000';
+   //var urlBase = 'https://kanikapp.herokuapp.com';
    var data = {};
 
    data.AllBookings = function () {

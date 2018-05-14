@@ -6,7 +6,6 @@ const app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var port = 2233;
 
 
 var Book = require('./Book.model')
@@ -113,6 +112,9 @@ if (module === require.main) {
   const server = app.listen(process.env.PORT || 5000, () => {
     const port = server.address().port;
     console.log(`Kanika listening on port ${port}`);
+    console.log(`Kanika url: http://localhost:5000/`); 
+    console.log(`Big Shaq... You don't know`); 
+
   });
   // [END server]
 }
