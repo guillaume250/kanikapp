@@ -1,0 +1,37 @@
+{
+  "name": "KanikaDB",
+  "main": "app.js",
+  "dependencies": {
+    "aes-cross": "^1.0.9",
+    "aes-decrypter": "^1.0.3",
+    "bcryptjs": "~2.3.0",
+    "body-parser": "~1.15.2",
+    "bristol": "~0.3.3",
+    "cron": "~1.1.0",
+    "crypto": "~0.0.3",
+    "express": "~4.14.0",
+    "express-jwt": "~3.4.0",
+    "formidable": "~1.0.17",
+    "generate-key": "~0.0.6",
+    "jsonwebtoken": "~7.1.6",
+    "method-override": "~2.3.6",
+    "moment": "~2.14.1",
+    "mongodb": "~2.2.4",
+    "mongoose": "~4.5.5",
+    "mongoose-unique-validator": "~1.0.2",
+    "nconf": "~0.8.4",
+    "node-gettext": "1.1.0",
+    "nodemailer": "2.7.2",
+    "npm": "^5.8.0",
+    "rand-token": "0.3.0",
+    "request": "~2.81.0",
+    "serve-favicon": "~2.3.0",
+    "underscore": "~1.8.3",
+    "xlsx-style": "0.8.13"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-angular-gettext": "^2.3.4",
+    "grunt-bower-install": "^1.6.0"
+  }
+}
