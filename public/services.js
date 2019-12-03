@@ -1,55 +1,51 @@
-var services = angular.module("services", ['ngMaterial']);
+var services = angular.module("services", ["ngMaterial"]);
 
-services.service('loginService',function($mdDialog){
-
+services.service("loginService", function($mdDialog) {
   this.LoginPopUp = function(ev) {
-      $mdDialog.show({
+    $mdDialog.show({
+      //******* controller *********//
 
-       //******* controller *********//
-
-      controller: function ($scope,$state) {
+      controller: function($scope, $state) {
         $scope.cancel = function() {
-              $mdDialog.cancel();
-            };
+          $mdDialog.cancel();
+        };
 
-      $scope.login = function() {
-                  $mdDialog.cancel();
-                  $state.go('apply');
-
-                };
-
-    },
-        templateUrl: '/assests/templates/login/login.html',
-        parent: angular.element(document.body),
-        targetEvent: ev,
-        clickOutsideToClose:true,
-        //fullscreen: $scope.customFullscreen
-      })
-    };
+        $scope.login = function() {
+          $mdDialog.cancel();
+          $state.go("apply");
+        };
+      },
+      templateUrl: "/assests/templates/login/login.html",
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose: true
+      //fullscreen: $scope.customFullscreen
+    });
+  };
 });
 
-services.factory('$httpReqs', ['$http', function($http) {
+services.factory("$httpReqs", [
+  "$http",
+  function($http) {
+    var urlBase = "http://localhost:5000";
+    //var urlBase = 'https://kanikapp.herokuapp.com';
+    var data = {};
 
-   var urlBase = 'http://localhost:5000';
-   //var urlBase = 'https://kanikapp.herokuapp.com';
-   var data = {};
-
-   data.AllBookings = function () {
-       return $http.get(urlBase + '/books');
-   };
-
-    data.UpdateBooking = function (booking) {
-        return $http.put(urlBase + '/book', booking);
+    data.AllBookings = function() {
+      return $http.get(urlBase + "/books");
     };
 
-    data.DeleteBooking = function (booking) {
-        return $http.delete(urlBase + '/book', booking);
+    data.UpdateBooking = function(booking) {
+      return $http.put(urlBase + "/book", booking);
     };
 
-      return data;
+    data.DeleteBooking = function(booking) {
+      return $http.delete(urlBase + "/book", booking);
+    };
 
-      }]);
-
+    return data;
+  }
+]);
 
 /*
    data.getCustomer = function (id) {
