@@ -1,37 +1,37 @@
 [
-      {
-        "id": 0,
-        "uri": "/",
-        "method": "GET"
-    },
-    {
-        "id": 1,
-        "uri": "/bookings",
-        "method": "GET"
-    },
-    {
-        "id": 2,
-        "uri": "/booking",
-        "method": "POST"
-    },
-    {
-        "id": 3,
-        "uri": "/booking",
-        "method": "PUT"
-    },
-    {
-        "id": 4,
-        "uri": "/booking",
-        "method": "DELETE"
-    },
-    {
-        "id": 5,
-        "uri": "/login/:UserName/",
-        "method": "GET"
-    },
-    {
-        "id": 6,
-        "uri": "/allusers",
-        "method": "GET"
-    }
+  {
+    "id": 0,
+    "uri": "/",
+    "method": "GET"
+  },
+  {
+    "id": 1,
+    "uri": "/bookings",
+    "method": "GET"
+  },
+  {
+    "id": 2,
+    "uri": "/booking",
+    "method": "POST"
+  },
+  {
+    "id": 3,
+    "uri": "/booking",
+    "method": "PUT"
+  },
+  {
+    "id": 4,
+    "uri": "/booking",
+    "method": "DELETE"
+  },
+  {
+    "id": 5,
+    "uri": "/login/:UserName/",
+    "method": "GET"
+  },
+  {
+    "id": 6,
+    "uri": "/allusers",
+    "method": "GET"
+  }
 ]
