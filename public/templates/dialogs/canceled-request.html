@@ -1,24 +1,31 @@
+<div layout="row" layout-fill>
+  <div style="padding: 50px;" class="md-list-item-text" layout="column">
+    <div class=" " style="margin-left: 25%; color: royalblue;">
+      <h4>New Booking Request</h4>
+    </div>
 
-  <div layout="row" layout-fill>
-          <div style="padding: 50px;" class="md-list-item-text" layout="column">
-          	<div class=" " style="margin-left: 25%; color: royalblue;"> <h4>New Booking Request</h4></div>
+    <div>
+      <h3><b>Booked Service:</b> {{ request.Service }}</h3>
+      <h4><b>Customer's Names: </b> {{ request.Names }}</h4>
+      <p><b>Customer's Address: </b> {{ request.Address }}</p>
+      <p><b>Customer's Phone Number: </b> {{ request.Phone }}</p>
+      <p><b>Car infos: </b> {{ request.CarInfos }}</p>
+      <p><b>Booked date: </b> {{ request.BookDate | limitTo : 10}}</p>
+    </div>
 
-          	<div>
-            <h3><b>Booked Service:</b> {{ request.Service }}</h3>
-            <h4><b>Customer's Names: </b>  {{ request.Names }}</h4>
-            <p><b>Customer's Address: </b> {{ request.Address }}</p>
-            <p><b>Customer's Phone Number: </b> {{ request.Phone }}</p>
-            <p><b>Car infos: </b> {{ request.CarInfos }}</p>
-            <p><b>Booked date: </b> {{ request.BookDate | limitTo : 10}}</p>
-          	</div>
-
-
-    <div style="padding-top: 100px;" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+    <div
+      style="padding-top: 100px;"
+      layout="row"
+      layout-sm="column"
+      layout-align="center center"
+      layout-wrap
+    >
       <md-button class="md-raised">Button</md-button>
       <md-button class="md-raised md-primary">Primary</md-button>
-      <md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
+      <md-button ng-disabled="true" class="md-raised md-primary"
+        >Disabled</md-button
+      >
       <md-button class="md-raised md-warn">Warn</md-button>
     </div>
-          
-          </div>
   </div>
+</div>
