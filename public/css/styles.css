@@ -1,61 +1,59 @@
 .img-circle {
-    border-radius: 50% !important;
-    width: 100px;
-height: 100px;
-background-size: cover;
-display: block;
+  border-radius: 50% !important;
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  display: block;
 }
 
-.md-blue{
-	background-color: rgb(25,25,81);
+.md-blue {
+  background-color: rgb(25, 25, 81);
 }
 
-
-.NewReqsStyle{
-	background-color: #B7CEEC;
-	border: solid 2px white;
-	border-left: solid 4px white;
-	border-right: solid 4px white;
+.NewReqsStyle {
+  background-color: #b7ceec;
+  border: solid 2px white;
+  border-left: solid 4px white;
+  border-right: solid 4px white;
 }
 
-.ConfirmedReqsStyle{
-	background-color: #52D017;
-	border: solid 2px white;
-	border-left: solid 4px white;
-	border-right: solid 4px white;
-
+.ConfirmedReqsStyle {
+  background-color: #52d017;
+  border: solid 2px white;
+  border-left: solid 4px white;
+  border-right: solid 4px white;
 }
 
-.CanceledReqsStyle{
-	min-width: 450px !important;
-	background-color: #ffedff;
-	border: solid 2px white;
-	border-left: solid 4px white;
-	border-right: solid 4px white;
+.CanceledReqsStyle {
+  min-width: 450px !important;
+  background-color: #ffedff;
+  border: solid 2px white;
+  border-left: solid 4px white;
+  border-right: solid 4px white;
 }
 
-.tabs-responsive{
- width:80%;
+.tabs-responsive {
+  width: 80%;
 }
 
-.blueactive {background-color: #B7CEEC !important; color: black !important;}
-.blueactive .md-blue-reverse {background-color: #B7CEEC !important; color: black !important;}
-
+.blueactive {
+  background-color: #b7ceec !important;
+  color: black !important;
+}
+.blueactive .md-blue-reverse {
+  background-color: #b7ceec !important;
+  color: black !important;
+}
 
 /* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-.tabs-responsive{
- width:100%;
-}}
-
-
-
-@media (max-device-width: 960px) { 
-.tabs-responsive{
- width:100%;
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .tabs-responsive {
+    width: 100%;
+  }
 }
 
- }
+@media (max-device-width: 960px) {
+  .tabs-responsive {
+    width: 100%;
+  }
+}
