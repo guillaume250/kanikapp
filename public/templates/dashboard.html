@@ -1,55 +1,78 @@
 <div layout="row" layout-fill>
+  <md-sidenav
+    class="md-sidenav-left"
+    md-component-id="left"
+    md-is-locked-open="$mdMedia('gt-md')"
+    md-whiteframe="6"
+  >
+    <md-toolbar
+      md-whiteframe="4"
+      class="md-primary"
+      layout-align="center center"
+      layout="column"
+    >
+      <p flex>Kanika Server</p>
+    </md-toolbar>
 
-
-<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="6">
-
-      <md-toolbar md-whiteframe="4" class="md-primary" layout-align="center center" layout="column">
-        <p flex>Kanika Server</p>
-</md-toolbar>
-
-
-      <md-content>
-
+    <md-content>
       <md-list flex layout-fill>
-
-        <md-list-item ui-sref=".bookings" ui-sref-active="blueactive" class="md-3-line" ng-click="close()">
-          <md-icon><i class="material-icons md-blue-reverse md-no-proxy">&#xE8B6;</i></md-icon>
+        <md-list-item
+          ui-sref=".bookings"
+          ui-sref-active="blueactive"
+          class="md-3-line"
+          ng-click="close()"
+        >
+          <md-icon
+            ><i class="material-icons md-blue-reverse md-no-proxy"
+              >&#xE8B6;</i
+            ></md-icon
+          >
           <div class="md-list-item-text" layout="column">
-            <h4 class="md-blue-reverse"> <b>Bookings</b></h4>
-            <p> <b>All booking requests</b></p>
+            <h4 class="md-blue-reverse"><b>Bookings</b></h4>
+            <p><b>All booking requests</b></p>
           </div>
         </md-list-item>
 
-        <md-list-item ui-sref=".reports" ui-sref-active="blueactive" class="md-3-line" ng-click="close()">
-          <md-icon><i class="material-icons md-blue-reverse md-no-proxy">&#xE3B6;</i></md-icon>
+        <md-list-item
+          ui-sref=".reports"
+          ui-sref-active="blueactive"
+          class="md-3-line"
+          ng-click="close()"
+        >
+          <md-icon
+            ><i class="material-icons md-blue-reverse md-no-proxy"
+              >&#xE3B6;</i
+            ></md-icon
+          >
           <div class="md-list-item-text" layout="column">
-            <h4 class="md-blue-reverse"> <b>Reports</b></h4>
-            <p> <b>View reports and charts</b></p>
+            <h4 class="md-blue-reverse"><b>Reports</b></h4>
+            <p><b>View reports and charts</b></p>
           </div>
         </md-list-item>
 
-        <md-list-item  ui-sref=".users" ui-sref-active="blueactive" class="md-3-line" ng-click="close()">
-           <md-icon><i class="material-icons md-blue1-reverse">&#xE39D;</i></md-icon>
+        <md-list-item
+          ui-sref=".users"
+          ui-sref-active="blueactive"
+          class="md-3-line"
+          ng-click="close()"
+        >
+          <md-icon
+            ><i class="material-icons md-blue1-reverse">&#xE39D;</i></md-icon
+          >
           <div class="md-list-item-text" layout="column">
-            <h4 class="md-blue1-reverse"> <b>Users</b></h4>
-            <p> <b>User management</b></p>
+            <h4 class="md-blue1-reverse"><b>Users</b></h4>
+            <p><b>User management</b></p>
           </div>
         </md-list-item>
+      </md-list>
 
-    </md-list>
-
-<div layout="column" layout-align="center center">
-  <md-button ng-click="close()" class="md-primary" hide-gt-md>
-    Close Menu
-  </md-button>
-</div>
+      <div layout="column" layout-align="center center">
+        <md-button ng-click="close()" class="md-primary" hide-gt-md>
+          Close Menu
+        </md-button>
+      </div>
     </md-content>
   </md-sidenav>
 
-
-  <div flex layout="column" layout-fill ui-view> <!--   -->
-
-
-</div>
-
+  <div flex layout="column" layout-fill ui-view><!----></div>
 </div>

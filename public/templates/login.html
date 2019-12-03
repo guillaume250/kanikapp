@@ -1,52 +1,69 @@
+<div layout="row" layout-fill>
+  <div layout="column" class="flex-60 md-blue">
+    <!--
+      <div id="crossfade">
 
-  <div layout="row" layout-fill>
+        <img src="assests/images/wallpaper/photoD.jpg">
+        <img src="assests/images/wallpaper/photoB.jpg"/>
+        <img src="assests/images/wallpaper/photoA.jpg"/>
+        <img src="assests/images/wallpaper/photoC.jpg">
+        <img src="assests/images/wallpaper/photoF.jpg">
 
-    <div layout="column" class="flex-60 md-blue">
-<!--
-<div id="crossfade">
+      </div>
+    -->
 
-  <img src="assests/images/wallpaper/photoD.jpg">
-  <img src="assests/images/wallpaper/photoB.jpg"/>
-  <img src="assests/images/wallpaper/photoA.jpg"/>
-  <img src="assests/images/wallpaper/photoC.jpg">
-  <img src="assests/images/wallpaper/photoF.jpg">
-
-</div>
--->
-
-  <!-- <img src="assests/images/kanika-left.png" style="width: 50%; margin-right:0; bottom: 0;"> -->
-
-
+    <!--
+      <img src="assests/images/kanika-left.png" style="width: 50%; margin-right:0; bottom: 0;">
+    -->
   </div>
 
-
-
-
-
-    <div id="Login" class="flex-40 md-whiteframe-12dp Univers" layout="column" layout-align="center center">
-      <img style="width: 45%;" src="assests/images/logo.png" alt="">
-      <div layout="column"  class="md-blue-reverse" layout-align="center center">
-          <h3>Kanika</h3>
-      </div>
-      <form class="md-blue-reverse" style="width:80%;"  ng-submit="Login()" layout-padding layout-align="center center" >
-        <div layout="row">
-          <md-input-container class="md-block" flex-gt-sm>
-          <label>Username</label>
-          <input type="text" ng-model="login.UserName" required autocomplete="false">
-          </md-input-container>
-        </div>
-
+  <div
+    id="Login"
+    class="flex-40 md-whiteframe-12dp Univers"
+    layout="column"
+    layout-align="center center"
+  >
+    <img style="width: 45%;" src="assests/images/logo.png" alt="" />
+    <div layout="column" class="md-blue-reverse" layout-align="center center">
+      <h3>Kanika</h3>
+    </div>
+    <form
+      class="md-blue-reverse"
+      style="width:80%;"
+      ng-submit="Login()"
+      layout-padding
+      layout-align="center center"
+    >
       <div layout="row">
         <md-input-container class="md-block" flex-gt-sm>
-        <label>Password</label>
-        <input required type="password" ng-model="login.Password">
+          <label>Username</label>
+          <input
+            type="text"
+            ng-model="login.UserName"
+            required
+            autocomplete="false"
+          />
         </md-input-container>
       </div>
 
-    <md-input-container layout="row" flex>
-    <md-button md-no-ink class="md-raised md-blue" type="submit" id="submit" value="Submit" flex>Login</md-button>
-    </md-input-container>
-      </form>
+      <div layout="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Password</label>
+          <input required type="password" ng-model="login.Password" />
+        </md-input-container>
+      </div>
 
-    </div>
+      <md-input-container layout="row" flex>
+        <md-button
+          md-no-ink
+          class="md-raised md-blue"
+          type="submit"
+          id="submit"
+          value="Submit"
+          flex
+          >Login</md-button
+        >
+      </md-input-container>
+    </form>
   </div>
+</div>
