@@ -23,7 +23,7 @@
     "body-parser": "^1.17.1",
     "serve-favicon": "~2.3.0",
     "mongod": "^2.0.0",
-    "mongoose": "^4.9.0",
+    "mongoose": "^5.7.13",
     "serve-favicon": "~2.3.0",
     "underscore": "~1.8.3"
   },
