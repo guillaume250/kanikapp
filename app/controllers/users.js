@@ -14,24 +14,23 @@ exports.api.list = function(req, res) {
 
 //Methods that handles APIS
 const login = (req, res) => {
-  if (req.params.UserName === "Fabrice") {
-    console.log("Test User: " + config.test_users.fabrice + " logged in");
-    res.json(config.test_users.fabrice);
-  } else if (req.params.UserName === "Guillaume") {
-    console.log("Test User: " + config.test_users.fabrice + " logged in");
-    res.json(config.test_users.guillaume);
-  } else {
-    Users.findOne({
-      UserName: req.params.UserName
-    }).exec(function(err, user) {
-      if (err) {
-        res.send("UserName Not found!");
-      } else {
-        console.log(user);
-        res.json(user);
-      }
-    });
-  }
+  // if (req.params.UserName === "Fabrice") {
+  //   console.log("Test User: " + config.test_users.fabrice + " logged in");
+  //   res.json(config.test_users.fabrice);
+  // } else if (req.params.UserName === "Guillaume") {
+  //   console.log("Test User: " + config.test_users.fabrice + " logged in");
+  //   res.json(config.test_users.guillaume);
+  // } else {}
+  Users.findOne({
+    UserName: req.params.UserName
+  }).exec(function(err, user) {
+    if (err) {
+      res.send("UserName Not found!");
+    } else {
+      console.log(user);
+      res.json(user);
+    }
+  });
 };
 
 const list = (req, res) => {
