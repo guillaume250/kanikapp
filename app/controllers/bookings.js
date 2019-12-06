@@ -1,4 +1,4 @@
-var Book = require("../models/bookings");
+var Book = require("../databases/mongodb/models/bookings");
 
 // API
 exports.api = {};

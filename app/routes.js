@@ -1,7 +1,7 @@
 var path = require("path");
 var app = require("../app");
 var _ = require("underscore");
-var aclRoutes = require("../resources/dictionary/app/routes.json");
+var aclRoutes = require("../resources/routes.json");
 
 var controllers = {};
 controllers.angular = function(req, res) {
