@@ -1,45 +1,27 @@
-var User = require("../databases/mongodb/models/users");
+const Users = require("../databases/mongodb/models/users");
+const config = require("../../config/keys");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 // API
 exports.api = {};
-
 exports.api.login = function(req, res) {
+  login(req, res);
+};
+exports.api.list = function(req, res) {
+  list(req, res);
+};
+
+//Methods that handles APIS
+const login = (req, res) => {
   if (req.params.UserName === "Fabrice") {
-    var userXXX = {
-      _id: "5951aec6ca973c1a0b5388csse",
-      ViewBookings: true,
-      ViewReports: true,
-      ViewUsers: true,
-      CanComfirmBooking: true,
-      CanCancelBooking: true,
-      CanDeleteBooking: true,
-      Status: true,
-      Password: "Fabrice",
-      UserName: "Fabrice",
-      FullNames: "Fabrice Ndayisenga",
-      Title: "Managing Director",
-      __v: 0
-    };
-    res.json(userXXX);
+    console.log("Test User: " + config.test_users.fabrice + " logged in");
+    res.json(config.test_users.fabrice);
   } else if (req.params.UserName === "Guillaume") {
-    var userXXX = {
-      _id: "5951aec6ca973c1a0b5388case",
-      ViewBookings: true,
-      ViewReports: true,
-      ViewUsers: true,
-      CanComfirmBooking: true,
-      CanCancelBooking: true,
-      CanDeleteBooking: true,
-      Status: true,
-      Password: "0788517777",
-      UserName: "Guillaume",
-      FullNames: "Guillaume Sayinzoga",
-      Title: "Chief Technology Officer",
-      __v: 1
-    };
-    res.json(userXXX);
+    console.log("Test User: " + config.test_users.fabrice + " logged in");
+    res.json(config.test_users.guillaume);
   } else {
-    User.findOne({
+    Users.findOne({
       UserName: req.params.UserName
     }).exec(function(err, user) {
       if (err) {
@@ -52,9 +34,9 @@ exports.api.login = function(req, res) {
   }
 };
 
-exports.api.list = function(req, res) {
+const list = (req, res) => {
   console.log("getting all users");
-  User.find({}).exec(function(err, users) {
+  Users.find({}).exec(function(err, users) {
     if (err) {
       res.send("error occured");
     } else {
