@@ -1,59 +1,59 @@
 const mongoose = require("mongoose");
-const Book = require("../databases/mongodb/models/bookings");
+const Reserve = require("../databases/mongodb/models/reservation");
 
 // API
 exports.api = {};
 
 exports.api.list = function(req, res) {
-  console.log(Book);
-  Book.find({}).exec(function(err, books) {
+  console.log(Reserve);
+  Reserve.find({}).exec(function(err, Reserves) {
     if (err) {
       res.send("error occured");
     } else {
-      console.log(books);
-      res.json(books);
+      console.log(Reserves);
+      res.json(Reserves);
     }
   });
 };
 
 exports.api.new = function(req, res) {
-  const newBook = new Book();
-  newBook.Names = req.body.Names;
-  newBook.Phone = req.body.Phone;
-  newBook.CarInfos = req.body.CarInfos;
-  newBook.Service = req.body.Service;
-  newBook.BookDate = req.body.BookDate;
-  newBook.Status = req.body.Status;
-  newBook.Address = req.body.Address;
-  newBook.request_date = Date();
+  const newReserve = new Reserve();
+  newReserve.Names = req.body.Names;
+  newReserve.Phone = req.body.Phone;
+  newReserve.CarInfos = req.body.CarInfos;
+  newReserve.Service = req.body.Service;
+  newReserve.ReserveDate = req.body.ReserveDate;
+  newReserve.Status = req.body.Status;
+  newReserve.Address = req.body.Address;
+  newReserve.request_date = Date();
 
-  newBook.save(function(err, book) {
+  newReserve.save(function(err, Reserve) {
     if (err) {
-      res.send("error saving book");
+      res.send("error saving Reserve");
     } else {
-      console.log("Book Saved!!!");
-      console.log(book);
-      res.send(book);
+      console.log("Reserve Saved!!!");
+      console.log(Reserve);
+      res.send(Reserve);
     }
   });
 };
 
 exports.api.update = function(req, res) {
-  console.log("Updating booking");
-  Book.findOneAndUpdate(
+  console.log("Updating Reserveing");
+  Reserve.findOneAndUpdate(
     {
       _id: req.body._id
     },
     { $set: { Status: req.body.Status } },
     { upsert: true },
-    function(err, book) {
+    function(err, Reserve) {
       if (err) {
         console.log("error occured " + error.message);
       } else {
-        console.log("Booking status updated");
-        console.log(book);
+        console.log("Reserveing status updated");
+        console.log(Reserve);
 
-        res.send(book);
+        res.send(Reserve);
       }
     }
   );
@@ -61,17 +61,17 @@ exports.api.update = function(req, res) {
 
 exports.api.delete = function(req, res) {
   console.log(req.body);
-  console.log("deleting booking");
-  Book.findOneAndRemove(
+  console.log("deleting Reserveing");
+  Reserve.findOneAndRemove(
     {
       _id: req.body._id
     },
-    function(err, Book) {
+    function(err, Reserve) {
       if (err) {
         res.send("error deleting");
       } else {
-        console.log(Book);
-        res.send(Book);
+        console.log(Reserve);
+        res.send(Reserve);
       }
     }
   );

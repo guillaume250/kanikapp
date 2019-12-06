@@ -6,22 +6,22 @@
   },
   {
     "id": 1,
-    "uri": "/bookings",
+    "uri": "/reservations",
     "method": "GET"
   },
   {
     "id": 2,
-    "uri": "/booking",
+    "uri": "/reservation",
     "method": "POST"
   },
   {
     "id": 3,
-    "uri": "/booking",
+    "uri": "/reservation",
     "method": "PUT"
   },
   {
     "id": 4,
-    "uri": "/booking",
+    "uri": "/reservation",
     "method": "DELETE"
   },
   {

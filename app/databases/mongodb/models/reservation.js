@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const BookSchema = new Schema({
+const reservation = new Schema({
   Names: String,
   Phone: String,
   CarInfos: String,
@@ -12,4 +12,4 @@ const BookSchema = new Schema({
   request_date: Date
 });
 
-module.exports = mongoose.model("Book", BookSchema);
+module.exports = mongoose.model("reservation", reservation);

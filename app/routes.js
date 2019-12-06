@@ -6,9 +6,8 @@ var aclRoutes = require("../resources/routes.json");
 var controllers = {};
 controllers.angular = function(req, res) {
   res.sendFile(path.join(__dirname, "../app/client", "index.html"));
-  console.log("Main Route Called");
 };
-controllers.bookings = require("./controllers/bookings");
+controllers.reservation = require("./controllers/reservation");
 controllers.customers = require("./controllers/customers");
 controllers.users = require("./controllers/users");
 
@@ -24,34 +23,34 @@ var routes = [
   {
     path: _.findWhere(aclRoutes, { id: 1 }).uri,
     httpMethod: _.findWhere(aclRoutes, { id: 1 }).method,
-    middleware: [controllers.bookings.api.list]
+    middleware: [controllers.reservation.api.list]
   },
   {
     path: _.findWhere(aclRoutes, { id: 2 }).uri,
     httpMethod: _.findWhere(aclRoutes, { id: 2 }).method,
-    middleware: [controllers.bookings.api.new]
+    middleware: [controllers.reservation.api.new]
   },
   {
     path: _.findWhere(aclRoutes, { id: 3 }).uri,
     httpMethod: _.findWhere(aclRoutes, { id: 3 }).method,
-    middleware: [controllers.bookings.api.update]
+    middleware: [controllers.reservation.api.update]
   },
   {
     path: _.findWhere(aclRoutes, { id: 4 }).uri,
     httpMethod: _.findWhere(aclRoutes, { id: 4 }).method,
-    middleware: [controllers.bookings.api.delete]
+    middleware: [controllers.reservation.api.delete]
   },
 
   // Users routes
   {
     path: _.findWhere(aclRoutes, { id: 5 }).uri,
     httpMethod: _.findWhere(aclRoutes, { id: 5 }).method,
-    middleware: [controllers.bookings.api.list]
+    middleware: [controllers.reservation.api.list]
   },
   {
     path: _.findWhere(aclRoutes, { id: 6 }).uri,
     httpMethod: _.findWhere(aclRoutes, { id: 6 }).method,
-    middleware: [controllers.bookings.api.new]
+    middleware: [controllers.reservation.api.new]
   }
 ];
 

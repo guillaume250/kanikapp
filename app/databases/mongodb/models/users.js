@@ -7,6 +7,7 @@ const UserSchema = new Schema({
   Password: String,
   Status: Boolean,
   Title: String,
+  permissionLevel: Number,
   //>> User Permisions Tabs <<//
   ViewBookings: Boolean,
   ViewReports: Boolean,
