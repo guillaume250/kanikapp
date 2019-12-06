@@ -1,16 +1,11 @@
-"use strict";
 const express = require("express");
-//const methodOverride  = require('method-override');
-const path = require("path");
-const favicon = require("serve-favicon");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const app = express();
-//const db = 'mongodb://guil12:guil12@ds041821.mlab.com:41821/kanikadb';
-const db_alt = "mongodb://fabrice:fabrice@ds127065.mlab.com:27065/kanikapp";
-mongoose.connect(db_alt);
+const keys = require("./config/keys");
+mongoose.connect(keys.db_alt);
 
-//app.use(methodOverride());
+const app = express();
+
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
@@ -18,7 +13,6 @@ app.use(
   })
 );
 app.use("/assests", express.static(__dirname + "/public"));
-//app.use(favicon(__dirname + '/public/img/favicon.ico'));
 
 // Routes
 require("./app/routes")(app);
