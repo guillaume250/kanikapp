@@ -12,7 +12,7 @@ app.use(
     extended: true
   })
 );
-app.use("/assests", express.static(__dirname + "/public"));
+app.use("/assests", express.static(__dirname + "/app/client"));
 
 // Routes
 require("./app/routes")(app);

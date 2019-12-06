@@ -1,6 +1,6 @@
 
 node_modules/*
-public/bower_components/*
+app/client/bower_components/*
 
 package-lock.json
 
