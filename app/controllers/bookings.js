@@ -1,10 +1,11 @@
-var Book = require("../databases/mongodb/models/bookings");
+const mongoose = require("mongoose");
+const Book = require("../databases/mongodb/models/bookings");
 
 // API
 exports.api = {};
 
 exports.api.list = function(req, res) {
-  console.log("getting all books");
+  console.log(Book);
   Book.find({}).exec(function(err, books) {
     if (err) {
       res.send("error occured");
@@ -16,7 +17,7 @@ exports.api.list = function(req, res) {
 };
 
 exports.api.new = function(req, res) {
-  var newBook = new Book();
+  const newBook = new Book();
   newBook.Names = req.body.Names;
   newBook.Phone = req.body.Phone;
   newBook.CarInfos = req.body.CarInfos;

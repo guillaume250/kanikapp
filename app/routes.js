@@ -5,7 +5,7 @@ var aclRoutes = require("../resources/routes.json");
 
 var controllers = {};
 controllers.angular = function(req, res) {
-  res.sendFile(path.join(__dirname, "../public", "index.html"));
+  res.sendFile(path.join(__dirname, "../app/client", "index.html"));
   console.log("Main Route Called");
 };
 controllers.bookings = require("./controllers/bookings");

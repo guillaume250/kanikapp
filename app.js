@@ -2,7 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
-mongoose.connect(keys.db_alt);
+mongoose.connect(
+  keys.db_alt,
+  { useNewUrlParser: true }
+);
 
 const app = express();
 

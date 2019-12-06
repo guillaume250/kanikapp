@@ -1,21 +1,20 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
-var UserSchema = new Schema({
-    FullNames: String,
-    UserName: String,
-    Password: String,
-    Status: Boolean,
-    Title:String,
-//>> User Permisions Tabs <<//
-    ViewBookings: Boolean,
-    ViewReports: Boolean,
-    ViewUsers: Boolean,
-//>> User Permisions Controlls <<//
-    CanComfirmBooking: Boolean,
-    CanCancelBooking: Boolean,
-    CanDeleteBooking: Boolean,
-
+const UserSchema = new Schema({
+  FullNames: String,
+  UserName: String,
+  Password: String,
+  Status: Boolean,
+  Title: String,
+  //>> User Permisions Tabs <<//
+  ViewBookings: Boolean,
+  ViewReports: Boolean,
+  ViewUsers: Boolean,
+  //>> User Permisions Controlls <<//
+  CanComfirmBooking: Boolean,
+  CanCancelBooking: Boolean,
+  CanDeleteBooking: Boolean
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model("User", UserSchema);

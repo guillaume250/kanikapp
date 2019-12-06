@@ -1,4 +1,4 @@
-var User = require("../databases/mongodb/models/bookings");
+var User = require("../databases/mongodb/models/users");
 
 // API
 exports.api = {};
