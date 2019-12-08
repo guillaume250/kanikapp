@@ -2,25 +2,61 @@
   {
     "id": 0,
     "uri": "/",
-    "method": "GET"
+    "method": "GET",
+    "description": "Serves the client page"
   },
   {
     "id": 1,
+    "uri": "/auth",
+    "method": "POST",
+    "description": "authenticate user"
+  },
+  {
+    "id": 2,
+    "uri": "/users",
+    "method": "GET",
+    "description": "List all users"
+  },
+  {
+    "id": 3,
+    "uri": "/user",
+    "method": "POST",
+    "description": "Create a new user"
+  },
+  {
+    "id": 4,
+    "uri": "/user",
+    "method": "PUT",
+    "description": "Update a user's information"
+  },
+  {
+    "id": 5,
+    "uri": "/users",
+    "method": "GET",
+    "description": "List all users"
+  },
+  {
+    "id": 6,
+    "uri": "/",
+    "method": "GET"
+  },
+  {
+    "id": 6,
     "uri": "/reservations",
     "method": "GET"
   },
   {
-    "id": 2,
+    "id": 7,
     "uri": "/reservation",
     "method": "POST"
   },
   {
-    "id": 3,
+    "id": 8,
     "uri": "/reservation",
     "method": "PUT"
   },
   {
-    "id": 4,
+    "id": 9,
     "uri": "/reservation",
     "method": "DELETE"
   },

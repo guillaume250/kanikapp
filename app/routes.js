@@ -7,74 +7,16 @@ var controllers = {};
 controllers.angular = function(req, res) {
   res.sendFile(path.join(__dirname, "../app/client", "index.html"));
 };
-controllers.reservation = require("./controllers/reservation");
-controllers.customers = require("./controllers/customers");
+controllers.auth = require("./controllers/auth");
 controllers.users = require("./controllers/users");
-
-var routes = [
+module.exports = app => {
   // Initial route
-  {
-    path: _.findWhere(aclRoutes, { id: 0 }).uri,
-    httpMethod: _.findWhere(aclRoutes, { id: 0 }).method,
-    middleware: [controllers.angular]
-  },
+  app.get("/", controllers.angular);
+  // Authentication route
+  app.post("/auth", controllers.auth.login);
+  app.post("/unauth", controllers.auth.logout);
 
-  // Booking routes
-  {
-    path: _.findWhere(aclRoutes, { id: 1 }).uri,
-    httpMethod: _.findWhere(aclRoutes, { id: 1 }).method,
-    middleware: [controllers.reservation.api.list]
-  },
-  {
-    path: _.findWhere(aclRoutes, { id: 2 }).uri,
-    httpMethod: _.findWhere(aclRoutes, { id: 2 }).method,
-    middleware: [controllers.reservation.api.new]
-  },
-  {
-    path: _.findWhere(aclRoutes, { id: 3 }).uri,
-    httpMethod: _.findWhere(aclRoutes, { id: 3 }).method,
-    middleware: [controllers.reservation.api.update]
-  },
-  {
-    path: _.findWhere(aclRoutes, { id: 4 }).uri,
-    httpMethod: _.findWhere(aclRoutes, { id: 4 }).method,
-    middleware: [controllers.reservation.api.delete]
-  },
-
-  // Users routes
-  {
-    path: _.findWhere(aclRoutes, { id: 5 }).uri,
-    httpMethod: _.findWhere(aclRoutes, { id: 5 }).method,
-    middleware: [controllers.reservation.api.list]
-  },
-  {
-    path: _.findWhere(aclRoutes, { id: 6 }).uri,
-    httpMethod: _.findWhere(aclRoutes, { id: 6 }).method,
-    middleware: [controllers.reservation.api.new]
-  }
-];
-
-module.exports = function(app) {
-  _.each(routes, function(route) {
-    var args = _.flatten([route.path, route.middleware]);
-    switch (route.httpMethod.toUpperCase()) {
-      case "GET":
-        app.get.apply(app, args);
-        break;
-      case "POST":
-        app.post.apply(app, args);
-        break;
-      case "PUT":
-        app.put.apply(app, args);
-        break;
-      case "DELETE":
-        app.delete.apply(app, args);
-        break;
-      default:
-        throw new Error(
-          "Invalid HTTP method specified for route " + route.path
-        );
-        break;
-    }
-  });
+  //Users related routes
+  app.get("/users", controllers.users.api.list);
+  app.post("/user", controllers.users.api.add);
 };

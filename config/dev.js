@@ -1,6 +1,19 @@
 module.exports = {
-  db: "mongodb://guil12:guil12@ds041821.mlab.com:41821/kanikadb",
-  db_alt: "mongodb://fabrice:fabrice@ds127065.mlab.com:27065/kanikapp",
+  server: {
+    env: "Development",
+    port: 5000,
+    uri: "http://localhost:"
+  },
+  databases: {
+    mongodb: {
+      local: "mongodb://127.0.0.1:27017/kanikapp",
+      remote: "mongodb://fabrice:fabrice@ds127065.mlab.com:27065/kanikapp"
+    }
+  },
+  token: {
+    secret: "kanika-dev-secret",
+    expiration: 900
+  },
   test_users: {
     fabrice: {
       _id: "5951aec6ca973c1a0b5388csse",
