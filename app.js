@@ -2,6 +2,8 @@ const express = require("express");
 const config = require("./config");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
+const auth = require("./app/services/auth");
 mongoose.connect(
   config.databases.mongodb.local,
   { useNewUrlParser: true }
@@ -15,14 +17,7 @@ app.use(
     extended: true
   })
 );
-app.use("/api/", function(req, res, next) {
-  if (req.headers.authorization) {
-    token = req.headers.authorization.split(" ")[1];
-    res.status(200).send(token);
-  } else {
-    res.status(401).send("No authorization bearer found");
-  }
-});
+auth.secureapis(app);
 
 // Routes
 require("./app/routes")(app);

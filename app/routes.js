@@ -7,14 +7,15 @@ var controllers = {};
 controllers.angular = function(req, res) {
   res.sendFile(path.join(__dirname, "../app/client", "index.html"));
 };
-controllers.auth = require("./controllers/auth");
 controllers.users = require("./controllers/users");
+const services = require("./services/auth");
+
 module.exports = app => {
   // Initial route
   app.get("/", controllers.angular);
   // Authentication route
-  app.post("/auth", controllers.auth.login);
-  app.post("/unauth", controllers.auth.logout);
+  app.post("/auth", services.login);
+  app.post("/unauth", services.logout);
 
   //***********API Routes****************
   //Users related routes

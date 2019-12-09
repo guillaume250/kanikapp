@@ -52,6 +52,21 @@ exports.logout = function(req, res) {
     }
   });
 };
+exports.secureapis = app => {
+  //API Security checks every route going to /api/
+  app.use("/api/", function(req, res, next) {
+    if (req.headers.authorization) {
+      token = req.headers.authorization.split(" ")[1];
+      jwt.verify(token, config.token.secret, function(err, decoded) {
+        req.body._user = decoded.data;
+        //  res.status(200).send(req.body);
+        next();
+      });
+    } else {
+      res.status(401).send("No authorization bearer found");
+    }
+  });
+};
 exports.encryptPassword = Password => {};
 
 exports.validatePassword = function(req, res) {};

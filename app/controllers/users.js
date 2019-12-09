@@ -1,5 +1,5 @@
 const Users = require("../databases/mongodb/models/users");
-const auth = require("./auth");
+const auth = require("../services/auth");
 const config = require("../../config");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
