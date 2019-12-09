@@ -2,7 +2,7 @@ const express = require("express");
 const config = require("./config");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
+//const jwt = require("jsonwebtoken");
 const auth = require("./app/services/auth");
 mongoose.connect(
   config.databases.mongodb.local,

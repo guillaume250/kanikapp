@@ -10,7 +10,8 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "monitor": "nodemon app.js"
+    "monitor": "nodemon app.js",
+    "eslint": "eslint"
   },
   "author": "Guillaume Sayinzoga",
   "contributors": [
@@ -30,8 +31,11 @@
     "underscore": "~1.8.3"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.7.2",
     "grunt": "^1.0.4",
     "grunt-angular-gettext": "^2.5.1",
-    "grunt-bower-install": "^1.6.0"
+    "grunt-bower-install": "^1.6.0",
+    "mocha": "^6.2.2"
   }
 }
