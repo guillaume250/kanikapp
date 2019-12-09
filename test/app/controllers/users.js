@@ -2,7 +2,7 @@ const chai = require("chai");
 const should = chai.should();
 const Users = require("../../../app/controllers/users");
 
-describe("Users controller functions", function() {
+describe("Users test suite", function() {
   context("Date and Time concatinator", function() {
     it("should return fname and lname concatinated with space in between", function() {
       const fname = "Guillaume";
