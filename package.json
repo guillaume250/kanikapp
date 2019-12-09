@@ -11,7 +11,8 @@
   "scripts": {
     "start": "node app.js",
     "monitor": "nodemon app.js",
-    "eslint": "eslint"
+    "eslint": "eslint",
+    "test": "mocha"
   },
   "author": "Guillaume Sayinzoga",
   "contributors": [

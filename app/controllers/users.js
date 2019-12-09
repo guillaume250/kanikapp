@@ -36,3 +36,11 @@ const createuser = (req, res) => {
     });
   });
 };
+
+exports.concatnames = (fname, lname) => {
+  if (!fname && !lname) {
+    return null;
+  } else {
+    return fname + " " + lname;
+  }
+};
