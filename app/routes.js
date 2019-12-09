@@ -16,7 +16,8 @@ module.exports = app => {
   app.post("/auth", controllers.auth.login);
   app.post("/unauth", controllers.auth.logout);
 
+  //***********API Routes****************
   //Users related routes
-  app.get("/users", controllers.users.api.list);
-  app.post("/user", controllers.users.api.add);
+  app.get("/api/users", controllers.users.api.list);
+  app.post("/api/user", controllers.users.api.add);
 };

@@ -27,7 +27,6 @@ const list = (req, res) => {
 const createuser = (req, res) => {
   bcrypt.hash(req.body.Password, saltRounds).then(function(hash) {
     req.body.Password = hash;
-    console.log(req.body.Password);
     Users.create(req.body, function(err, user) {
       if (err) {
         res.send("error occured");

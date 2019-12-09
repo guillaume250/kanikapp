@@ -12,7 +12,7 @@ module.exports = {
   },
   token: {
     secret: "kanika-dev-secret",
-    expiration: 900
+    expiration: "1h" //jsonwebtoken will calculate 1 hour from the token creation date
   },
   test_users: {
     fabrice: {

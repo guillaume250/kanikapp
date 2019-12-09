@@ -15,6 +15,14 @@ app.use(
     extended: true
   })
 );
+app.use("/api/", function(req, res, next) {
+  if (req.headers.authorization) {
+    token = req.headers.authorization.split(" ")[1];
+    res.status(200).send(token);
+  } else {
+    res.status(401).send("No authorization bearer found");
+  }
+});
 
 // Routes
 require("./app/routes")(app);
