@@ -8,19 +8,19 @@ angular.module("bookingsAPI", []).factory("bookings", [
 
     //Booking APIs
     api.list = function(id) {
-      return $http.get("/bookings");
+      return $http.get("/api/bookings");
     };
 
     api.post = function(booking) {
-      return $http.post("/booking", booking);
+      return $http.post("/api/booking", booking);
     };
 
     api.put = function(booking) {
-      return $http.put("/booking", booking);
+      return $http.put("/api/booking", booking);
     };
 
     api.delete = function(booking) {
-      return $http.delete("/booking", booking);
+      return $http.delete("/api/booking", booking);
     };
 
     return api;

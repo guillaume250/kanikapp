@@ -32,15 +32,15 @@ services.factory("$httpReqs", [
     var data = {};
 
     data.AllBookings = function() {
-      return $http.get(urlBase + "/books");
+      return $http.get(urlBase + "/api/books");
     };
 
     data.UpdateBooking = function(booking) {
-      return $http.put(urlBase + "/book", booking);
+      return $http.put(urlBase + "/api/book", booking);
     };
 
     data.DeleteBooking = function(booking) {
-      return $http.delete(urlBase + "/book", booking);
+      return $http.delete(urlBase + "/api/book", booking);
     };
 
     return data;
