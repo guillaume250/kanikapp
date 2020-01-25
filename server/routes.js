@@ -1,11 +1,11 @@
-var path = require("path");
-var app = require("../app");
-var _ = require("underscore");
-var aclRoutes = require("../resources/routes.json");
+const path = require("path");
+//const app = require("../app");
+const _ = require("underscore");
+const aclRoutes = require("./resources/routes.json");
 
-var controllers = {};
+const controllers = {};
 controllers.angular = function(req, res) {
-  res.sendFile(path.join(__dirname, "../app/client", "index.html"));
+  res.sendFile(path.join(__dirname, "../client", "index.html"));
 };
 controllers.users = require("./controllers/users");
 const services = require("./services/auth");

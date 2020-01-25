@@ -1,5 +1,5 @@
 const Users = require("../databases/mongodb/models/users");
-const config = require("../../config");
+const config = require("../config");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
