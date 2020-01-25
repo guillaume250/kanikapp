@@ -2,15 +2,15 @@
   "name": "kanikadb",
   "version": "1.0.0",
   "description": "The Web Version of the Kanika App that manages all data",
-  "main": "app.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guillaume250/kanikapp"
   },
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "monitor": "nodemon app.js",
+    "start": "node index.js",
+    "monitor": "nodemon index.js",
     "eslint": "eslint",
     "test": "mocha"
   },
@@ -28,6 +28,7 @@
     "mongod": "^2.0.0",
     "mongoose": ">=5.7.5",
     "nconf": "^0.10.0",
+    "nodemon": "^2.0.2",
     "serve-favicon": "^2.5.0",
     "underscore": "~1.8.3"
   },

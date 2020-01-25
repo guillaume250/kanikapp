@@ -1,7 +1,7 @@
 
-node_modules/*
-app/client/bower_components/*
-
+node_modules
+app/client/bower_components
+yarn.lock
 package-lock.json
 
 .DS_Store
