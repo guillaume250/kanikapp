@@ -4,6 +4,10 @@ const _ = require("underscore");
 const aclRoutes = require("./resources/routes.json");
 
 const controllers = {};
+
+controllers.initialRoute = function(req, res) {
+  res.sendFile(path.join(__dirname, "../", "init.md"));
+};
 controllers.angular = function(req, res) {
   res.sendFile(path.join(__dirname, "../client", "index.html"));
 };
@@ -12,7 +16,11 @@ const services = require("./services/auth");
 
 module.exports = app => {
   // Initial route
-  app.get("/", controllers.angular);
+  app.get("/", controllers.initialRoute);
+
+//Client App Version
+  app.get("/angularjs", controllers.angular);
+
   // Authentication route
   app.post("/auth", services.login);
   app.post("/unauth", services.logout);
