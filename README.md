@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Kanikapp is a reservation management software for the Kanika car shop. The software is developed with ExpressJS/NodeJS on the server, MongoDB for the database and has an AngularJS, React/Redux and Angular front-end versions.
+Kanikapp is a reservation management software for the Kanika car shop. The software is developed with ExpressJS/NodeJS on the server, MongoDB for the database and has an AngularJS, React/Redux and Angular client versions.
 
 This code base has three branches that each represents the app's frontend technology variation.
 

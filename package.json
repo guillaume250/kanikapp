@@ -11,6 +11,7 @@
   "scripts": {
     "start": "node index.js",
     "monitor": "nodemon index.js",
+    "mongo":"brew services start mongodb-community@4.4",
     "eslint": "eslint",
     "test": "mocha"
   },
