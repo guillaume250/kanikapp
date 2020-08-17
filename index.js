@@ -7,7 +7,7 @@ const auth = require("./server/services/auth");
 mongoose.connect(config.databases.mongodb.local, { useNewUrlParser: true });
 
 const app = express();
-app.use("/assests", express.static(__dirname + "/client"));
+app.use("/assests", express.static(__dirname + "/client/angularJS"));
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
