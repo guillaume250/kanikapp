@@ -9,8 +9,12 @@
   },
   "private": true,
   "scripts": {
-    "start": "nodemon index.js & yarn livereload /client",
-    "start:angularjs": "nodemon index.js & yarn reload -b -d /client/angularJS/",
+    "start": "concurrently \"nodemon index.js\" \"yarn reload -b -d ./client\"",
+
+    "install:ajs": "cd ./client/angularJS & npm install",
+    "start:ajs": "yarn start:angularjs",
+    "start:angularjs": "nodemon index.js & open http://localhost:5000/angularjs",
+    
     "monitor": "nodemon index.js",
     "mongo": "brew services start mongodb-community@4.4",
     "eslint": "eslint",
@@ -36,10 +40,12 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "concurrently": "^5.3.0",
     "eslint": "^6.7.2",
     "grunt": "^1.0.4",
     "grunt-angular-gettext": "^2.5.1",
     "grunt-bower-install": "^1.6.0",
+    "http-server": "^0.12.3",
     "mocha": "^6.2.2",
     "reload": "^3.1.0"
   }
