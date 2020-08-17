@@ -6,10 +6,10 @@ const aclRoutes = require("./resources/routes.json");
 const controllers = {};
 
 controllers.initialRoute = function(req, res) {
-  res.sendFile(path.join(__dirname, "../", "init.md"));
+  res.sendFile(path.join(__dirname, "../client", "index.html"));
 };
 controllers.angular = function(req, res) {
-  res.sendFile(path.join(__dirname, "../client", "index.html"));
+  res.sendFile(path.join(__dirname, "../client/angularJS", "index.html"));
 };
 controllers.users = require("./controllers/users");
 const services = require("./services/auth");
