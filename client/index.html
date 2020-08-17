@@ -1,50 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>The Kanika App</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-<div id="header">
-<h1>KanikApp</h1>
-<h4>A car shop in your phone</h4>
-</div>
+  <body class="container">
+    <div id="header" class="section header">
+      <p class="title">KanikApp</p>
+      <span class="subtitle">A car shop in your phone</span>
+    </div>
+    <div id="main" class="section row">
+      <p id="about" class="rad-borders space block">
+        Kanikapp is a reservation management software for the Kanika car shop.
+        The software is developed with ExpressJS/NodeJS on the server, MongoDB
+        for the database and has an AngularJS, React/Redux and Angular client
+        versions.
+      </p>
+      <div id="versioning" class="versioning rad-borders space block">
+        <div class=""></div>
+        <table>
+          <tr id="tableTitles" />
+          <tr>
+            <td>MongoDB</td>
+            <td>ExpressJS/NodeJS</td>
+            <td>AngularJS</td>
+            <td>Done</td>
+          </tr>
+          <tr>
+            <td>MongoDB</td>
+            <td>ExpressJS/NodeJS</td>
+            <td>React/Redux</td>
+            <td>In progress</td>
+          </tr>
+          <tr>
+            <td>MongoDB</td>
+            <td>ExpressJS/NodeJS</td>
+            <td>Angular</td>
+            <td>To do</td>
+          </tr>
+        </table>
+      </div>
+    </div>
 
-<div id="main" class="">
-  <p id="about" class="">
-    Kanikapp is a reservation management software for the Kanika car shop.
-    The software is developed with ExpressJS/NodeJS on the server,
-    MongoDB for the database and has an AngularJS,
-    React/Redux and Angular client versions.
-  </p>
-  <div id="versioning">
-    <table>
-      <tr>
-        <th>Database</th>
-        <th>Server</th>
-        <th>Client</th>
-        <th>Status</th>
-      </tr>
-      <tr>
-        <td>MongoDB</td>
-        <td>ExpressJS/NodeJS</td>
-        <td>AngularJS</td>
-        <td>Done</td>
-      </tr>
-      <tr>
-        <td>MongoDB</td>
-        <td>ExpressJS/NodeJS</td>
-        <td>React/Redux</td>
-        <td>In progress</td>
-      </tr>
-      <tr>
-        <td>MongoDB</td>
-        <td>ExpressJS/NodeJS</td>
-        <td>Angular</td>
-        <td>To do</td>
-      </tr>
-    </table>
-  </div>
-</div>
+    <div id="footer" class="footer section rad-borders">
+      <p>KanikApp <span>A car shop in your phone</span></p>
+    </div>
+
+    <script type="text/javascript">
+      const tableTitles = document.getElementById("tableTitles");
+      const versioningTitles = ["Database", "Server", "Client", "Status"];
+      versioningTitles.forEach((item, i) => {
+        const tableHeader = document.createElement("th");
+        tableHeader.innerHTML = item;
+        tableTitles.appendChild(tableHeader);
+      });
+    </script>
   </body>
 </html>
