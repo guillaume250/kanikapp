@@ -9,9 +9,10 @@
   },
   "private": true,
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js & yarn livereload /client",
+    "start:angularjs": "nodemon index.js & yarn reload -b -d /client/angularJS/",
     "monitor": "nodemon index.js",
-    "mongo":"brew services start mongodb-community@4.4",
+    "mongo": "brew services start mongodb-community@4.4",
     "eslint": "eslint",
     "test": "mocha"
   },
@@ -29,7 +30,7 @@
     "mongod": "^2.0.0",
     "mongoose": ">=5.7.5",
     "nconf": "^0.10.0",
-    "nodemon": "^2.0.2",
+    "nodemon": "^2.0.4",
     "serve-favicon": "^2.5.0",
     "underscore": "~1.8.3"
   },
@@ -39,6 +40,7 @@
     "grunt": "^1.0.4",
     "grunt-angular-gettext": "^2.5.1",
     "grunt-bower-install": "^1.6.0",
-    "mocha": "^6.2.2"
+    "mocha": "^6.2.2",
+    "reload": "^3.1.0"
   }
 }
