@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 2;
+}
+
+.title {
+  animation-duration: 0.5s;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 30px;
+}
+
+.space {
+  margin: 20px;
+  padding: 10px;
+}
+
+.block {
+  width: 50%;
+}
+
+.subtitle-animated {
+  animation-duration: 1.5s;
+  animation-name: subTitleAnime;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 16px;
+  left: 50%;
+  position: fixed;
+  top: 12%;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: bold;
+}
+.section {
+  margin: 20px;
+  padding: 10px;
+}
+.rad-borders {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+.table {
+  display: flex;
+  flex-direction: row;
+}
+.footer {
+  display: block;
+}
+@keyframes subTitleAnime {
+  0% {
+    transform: skew(35deg, 0deg);
+    left: 0;
+    top: 12%;
+  }
+  80% {
+    transform: skew(-35deg, 0deg);
+    left: 50%;
+    top: 12%;
+  }
+  85% {
+    transform: skew(-15deg, 0deg);
+    left: 50%;
+    top: 12%;
+  }
+  90% {
+    transform: skew(5deg, 0deg);
+    left: 50%;
+    top: 12%;
+  }
+  93% {
+    transform: skew(10deg, 0deg);
+    left: 50%;
+    top: 12%;
+  }
+  95% {
+    transform: skew(15deg, 0deg);
+    left: 50%;
+    top: 12%;
+  }
+  100% {
+    transform: skew(0deg, 0deg);
+    left: 50%;
+    top: 12%;
+  }
+}

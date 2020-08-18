@@ -8,52 +8,62 @@
   <body class="container">
     <div id="header" class="section header">
       <p class="title">KanikApp</p>
-      <span class="subtitle">A car shop in your phone</span>
+      <span class="subtitle-animated">A car shop in your phone</span>
     </div>
+
     <div id="main" class="section row">
       <p id="about" class="rad-borders space block">
+        <span class="subtitle">Description</span><br /><br />
         Kanikapp is a reservation management software for the Kanika car shop.
         The software is developed with ExpressJS/NodeJS on the server, MongoDB
         for the database and has an AngularJS, React/Redux and Angular client
         versions.
       </p>
       <div id="versioning" class="versioning rad-borders space block">
-        <div class=""></div>
-        <table>
-          <tr id="tableTitles" />
-          <tr>
-            <td>MongoDB</td>
-            <td>ExpressJS/NodeJS</td>
-            <td>AngularJS</td>
-            <td>Done</td>
-          </tr>
-          <tr>
-            <td>MongoDB</td>
-            <td>ExpressJS/NodeJS</td>
-            <td>React/Redux</td>
-            <td>In progress</td>
-          </tr>
-          <tr>
-            <td>MongoDB</td>
-            <td>ExpressJS/NodeJS</td>
-            <td>Angular</td>
-            <td>To do</td>
-          </tr>
-        </table>
+        <span class="subtitle">Technology variations</span><br /><br />
+        <div id="table" class="table"><div id="table" class="table"></div></div>
       </div>
     </div>
 
-    <div id="footer" class="footer section rad-borders">
+    <!-- <div id="footer" class="footer section rad-borders">
       <p>KanikApp <span>A car shop in your phone</span></p>
-    </div>
+    </div> -->
 
     <script type="text/javascript">
+      // Get existing nodes by id
+      const table = document.getElementById("table");
       const tableTitles = document.getElementById("tableTitles");
+      const br = document.createElement("br");
+
+      //Data
       const versioningTitles = ["Database", "Server", "Client", "Status"];
+      const mean = ["MongoDB", "ExpressJS/NodeJS", "AngularJS", "Done"];
+      const mean2 = ["MongoDB", "ExpressJS/NodeJS", "Angular", "To do"];
+      const mern = [
+        "MongoDB",
+        "ExpressJS/NodeJS",
+        "React/Redux	",
+        "In progress"
+      ];
+
+      //Creates table titles
       versioningTitles.forEach((item, i) => {
-        const tableHeader = document.createElement("th");
-        tableHeader.innerHTML = item;
-        tableTitles.appendChild(tableHeader);
+        const row = document.createElement("div");
+        const col = document.createElement("div");
+        col.setAttribute("style", "font-weight: bold; padding-right:10px");
+        col.innerHTML = item;
+        row.appendChild(col);
+        table.appendChild(row);
+      });
+
+      //Lists technologies vertically
+      mern.forEach((item, i) => {
+        const row = document.createElement("div");
+        const col = document.createElement("div");
+        col.setAttribute("style", "font-weight: regular; padding-right:10px");
+        col.innerHTML = item;
+        row.appendChild(col);
+        table.appendChild(row);
       });
     </script>
   </body>
