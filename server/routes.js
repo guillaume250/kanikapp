@@ -18,7 +18,7 @@ module.exports = app => {
   // Initial route
   app.get("/", controllers.initialRoute);
 
-//Client App Version
+  //Client App Version
   app.get("/angularjs", controllers.angular);
 
   // Authentication route

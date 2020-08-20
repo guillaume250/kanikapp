@@ -15,7 +15,8 @@
     "id": 2,
     "uri": "/users",
     "method": "GET",
-    "description": "List all users"
+    "description": "List all users",
+    "secure": true
   },
   {
     "id": 3,

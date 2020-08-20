@@ -10,11 +10,9 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"nodemon index.js\" \"yarn reload -b -d ./client\"",
-
     "install:ajs": "cd ./client/angularJS & npm install",
     "start:ajs": "yarn start:angularjs",
     "start:angularjs": "nodemon index.js & open http://localhost:5000/angularjs",
-    
     "monitor": "nodemon index.js",
     "mongo": "brew services start mongodb-community@4.4",
     "eslint": "eslint",
