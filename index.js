@@ -4,7 +4,10 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 //const jwt = require("jsonwebtoken");
 const auth = require("./server/services/auth");
-mongoose.connect(config.databases.mongodb.local, { useNewUrlParser: true });
+mongoose.connect(config.databases.mongodb.local, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 const app = express();
 app.use("/assests", express.static(__dirname + "/client/angularJS"));

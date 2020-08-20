@@ -10,6 +10,7 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"nodemon index.js\" \"yarn reload -b -d ./client\"",
+    "serve": " yarn mongo & yarn nodemon",
     "install:ajs": "cd ./client/angularJS & npm install",
     "start:ajs": "yarn start:angularjs",
     "start:angularjs": "nodemon index.js & open http://localhost:5000/angularjs",
